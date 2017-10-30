@@ -7,11 +7,43 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+  <ion-list radio-group [(ngModel)]="nacionalidad" (ionChange)="showAlertNacionalidad()">
+    <ion-list-header>
+      ¿De dónde eres?
+    </ion-list-header>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-icon name="spain"></ion-icon>
+      <ion-label>España</ion-label>
+      <ion-radio checked="false" value="España"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="france"></ion-icon>
+      <ion-label>Francia</ion-label>
+      <ion-radio checked="false" value="Francia"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="china"></ion-icon>
+      <ion-label>China</ion-label>
+      <ion-radio checked="false" value="China"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mexico"></ion-icon>
+      <ion-label>México</ion-label>
+      <ion-radio checked="false" value="Mexico"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="australia"></ion-icon>
+      <ion-label>Australia</ion-label>
+      <ion-radio checked="false" value="Australia"></ion-radio>
     </ion-item>
   </ion-list>
+
+  <ion-item>
+    <ion-label>Estoy de acuerdo con la Política de Privacidad</ion-label>
+    <ion-checkbox [(ngModel)]="privacidad"></ion-checkbox>
+  </ion-item>
+
+  <p>
+    <button ion-button color="secondary" (click)="privacidadAlerta()">Enviar encuesta</button>
+  </p>
 </ion-content>
