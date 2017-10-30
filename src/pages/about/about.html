@@ -1,11 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      SegundaPantallaIonic
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+      <ion-label>{{loQueEs}}</ion-label>
+      <ion-toggle [(ngModel)]="motero" (ionChange)="cambiarRollo()"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+  <img src="../../assets/imgs/{{imgACambiar}}.jpg" />
+
+  <button ion-button small outline
+            (click)="irATerceraPantalla()">
+            ¿Rellenarías una encuesta?
+  </button>
 </ion-content>
